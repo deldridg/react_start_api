@@ -16,7 +16,9 @@ services:
       - key: DEBUG
         value: false
       - key: DB_NAME
-        value: react_start
+        fromDatabase:
+          name: react-start-db
+          property: database
       - key: DB_USER
         fromDatabase:
           name: react-start-db
