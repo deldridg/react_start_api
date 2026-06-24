@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables — never commit this
+.env
+
+# Django
+db.sqlite3
+*.log
+media/
+
+# Editor
+.vscode/
