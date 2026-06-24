@@ -8,9 +8,9 @@ cd /tmp/react_start
 npm install
 npm run build
 
-# Copy entire React build into Django
 cp -r dist/ $OLDPWD/react_build
 
 cd $OLDPWD
 python manage.py collectstatic --noinput
 python manage.py migrate
+python manage.py seed_sales
