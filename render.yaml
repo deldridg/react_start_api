@@ -1,7 +1,6 @@
 databases:
   - name: react-start-db
     databaseName: react_start
-    user: postgres
     plan: free
 
 services:
