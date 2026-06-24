@@ -135,6 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'react_build', 'assets'),
+]
 
 # React build - served from Django
 REACT_BUILD_DIR = os.path.join(BASE_DIR, 'react_build')
