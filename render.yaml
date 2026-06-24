@@ -1,0 +1,36 @@
+databases:
+  - name: react-start-db
+    databaseName: react_start
+    user: postgres
+    plan: free
+
+services:
+  - type: web
+    name: react-start-api
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: DB_NAME
+        value: react_start
+      - key: DB_USER
+        fromDatabase:
+          name: react-start-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: react-start-db
+          property: password
+      - key: DB_HOST
+        fromDatabase:
+          name: react-start-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: react-start-db
+          property: port
