@@ -17,16 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.views.generic import TemplateView
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from sales.views import sales_data
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/sales/', sales_data, name='sales_data'),
-]
-
-urlpatterns += staticfiles_urlpatterns()
-
-urlpatterns += [
+    path('api/sales/', sales_data),
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
