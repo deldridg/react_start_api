@@ -9,6 +9,7 @@ __pycache__/
 
 # Environment variables — never commit this
 .env
+.env.local-reference
 
 # Django
 db.sqlite3
